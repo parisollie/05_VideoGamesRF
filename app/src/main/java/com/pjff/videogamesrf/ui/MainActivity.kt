@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var retrofit: Retrofit*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.SplashTheme)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -13,22 +13,28 @@ data class GameDetailDto(
      in diam sceleorttitor malesuada consequat. Mauris arcu velit, aliquam in justo vel"
      }
     */
-  /*  @SerializedName("title")
-    var title: String? = null,
-    @SerializedName("image")
-    var image: String? = null,
-    @SerializedName("long_desc")
-    var longDesc: String? = null
-)*/
+    /*  @SerializedName("title")
+      var title: String? = null,
+      @SerializedName("image")
+      var image: String? = null,
+      @SerializedName("long_desc")
+      var longDesc: String? = null
+  )*/
 
 //---------------------------------PR2------------------------------
 
-@SerializedName("name")
-var name: String? = null,
-@SerializedName("image")
-var image: String? = null,
-@SerializedName("long_desc")
-var longDesc: String? = null
+    @SerializedName("name")
+    var name: String? = null,
+    @SerializedName("image")
+    var image: String? = null,
+    @SerializedName("long_desc")
+    var longDesc: String? = null,
+    @SerializedName("Level")
+    var levelX: String? = null,
+    @SerializedName("First Time")
+    var first_Time: String? = null,
+    @SerializedName("Power")
+    var power: String? = null
 )
 
 /*

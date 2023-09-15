@@ -62,6 +62,12 @@ class GameDetailFragment : Fragment() {
 
                                 tvLongDesc.text = response.body()?.longDesc
 
+                                tvLevel.text = response.body()?.levelX
+
+                                tvFirstTime.text = response.body()?.first_Time
+
+                                tvPower.text = response.body()?.power
+
                                 Glide.with(requireContext())
                                     .load(response.body()?.image)
                                     .into(ivImage)
