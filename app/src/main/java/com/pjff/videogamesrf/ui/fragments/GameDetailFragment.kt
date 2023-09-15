@@ -36,33 +36,32 @@ class GameDetailFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let { args ->
-            //Agarramos el gameId
             gameId = args.getString(GAME_ID)
 
             Log.d(Constants.LOGTAG, "Id recibido: $gameId")
 
-            //Pasame la instancia del repositorio
             repository = (requireActivity().application as VideoGamesRFApp).repository
 
             lifecycleScope.launch {
 
-                //Funcion de alcance
                 gameId?.let { id ->
-                   // val call: Call<GameDetailDto> = repository.getGameDetail(id)
+                    //val call: Call<GameDetailDto> = repository.getGameDetail(id)
                     val call: Call<GameDetailDto> = repository.getGameDetailApiary(id)
 
-                    call.enqueue(object: Callback<GameDetailDto> {
+                    call.enqueue(object: Callback<GameDetailDto>{
                         override fun onResponse(
                             call: Call<GameDetailDto>,
                             response: Response<GameDetailDto>
                         ) {
-                            binding.apply {
-                                //Los componentes que queiero
 
+
+                            binding.apply {
                                 pbLoading.visibility = View.GONE
+
                                 tvTitle.text = response.body()?.title
+
                                 tvLongDesc.text = response.body()?.longDesc
-                                //Para tener la imagen
+
                                 Glide.with(requireContext())
                                     .load(response.body()?.image)
                                     .into(ivImage)
@@ -88,14 +87,12 @@ class GameDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //Inflamos
         _binding = FragmentGameDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        //Para evitar fugas de memoria
         _binding = null
     }
 

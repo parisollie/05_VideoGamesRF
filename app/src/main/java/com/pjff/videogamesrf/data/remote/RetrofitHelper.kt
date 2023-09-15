@@ -8,7 +8,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 class RetrofitHelper {
-    //es que la me da la instancia al retrofit
     fun getRetrofit(): Retrofit {
 
         val interceptor = HttpLoggingInterceptor().apply {
@@ -26,12 +25,3 @@ class RetrofitHelper {
             .build()
     }
 }
-
-    /* fun getRetrofit(): Retrofit =
-        Retrofit.Builder()
-            .baseUrl(Constants.BASE_URL)
-            //.client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()*/
-
-

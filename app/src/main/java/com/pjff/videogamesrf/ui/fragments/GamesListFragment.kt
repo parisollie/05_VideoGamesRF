@@ -42,19 +42,16 @@ class GamesListFragment : Fragment() {
         return binding.root
     }
 
-    //Sobreescribimos el onViewCreated
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //Instanciamos el repositorio
         repository = (requireActivity().application as VideoGamesRFApp).repository
 
-        //Para lanzar nuestra ecorutina
         lifecycleScope.launch {
             //val call: Call<List<GameDto>> = repository.getGames("cm/games/games_list.php")
             val call: Call<List<GameDto>> = repository.getGamesApiary()
 
-            call.enqueue(object: Callback<List<GameDto>> {
+            call.enqueue(object: Callback<List<GameDto>>{
                 override fun onResponse(
                     call: Call<List<GameDto>>,
                     response: Response<List<GameDto>>
@@ -62,15 +59,12 @@ class GamesListFragment : Fragment() {
 
                     binding.pbLoading.visibility = View.GONE
 
-                    //Para depurar
                     Log.d(Constants.LOGTAG, "Respuesta del servidor: ${response.body()}")
 
                     response.body()?.let{ games ->
                         binding.rvGames.apply {
                             layoutManager = LinearLayoutManager(requireContext())
-                            //Le pasamos el adapter y le pasamos el listado de juegos
                             adapter = GamesAdapter(games){ game ->
-                                //Aqui nos manda el juego
                                 game.id?.let { id ->
                                     //Aquí va el código para la operación para ver los detalles
                                     requireActivity().supportFragmentManager.beginTransaction()
@@ -89,7 +83,6 @@ class GamesListFragment : Fragment() {
 
                     Toast.makeText(requireActivity(), "No hay conexión", Toast.LENGTH_SHORT).show()
 
-                    //Accedemos al progress bar
                     binding.pbLoading.visibility = View.GONE
 
                 }

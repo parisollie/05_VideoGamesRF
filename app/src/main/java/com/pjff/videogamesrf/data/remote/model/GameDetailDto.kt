@@ -9,5 +9,4 @@ data class GameDetailDto(
     var image: String? = null,
     @SerializedName("long_desc")
     var longDesc: String? = null
-//Para agregar nuestra pr2
 )
