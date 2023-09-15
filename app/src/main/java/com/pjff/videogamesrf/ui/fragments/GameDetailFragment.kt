@@ -58,7 +58,7 @@ class GameDetailFragment : Fragment() {
                             binding.apply {
                                 pbLoading.visibility = View.GONE
 
-                                tvTitle.text = response.body()?.title
+                                tvTitle.text = response.body()?.name
 
                                 tvLongDesc.text = response.body()?.longDesc
 

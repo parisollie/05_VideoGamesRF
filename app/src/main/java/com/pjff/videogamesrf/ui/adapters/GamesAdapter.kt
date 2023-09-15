@@ -17,7 +17,7 @@ class GamesAdapter(
         val ivThumbnail = binding.ivThumbnail
 
         fun bind(game: GameDto){
-            binding.tvTitle.text = game.title
+            binding.tvTitle.text = game.name
         }
     }
 

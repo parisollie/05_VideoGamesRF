@@ -27,7 +27,7 @@ interface GamesApi {
     //cm/games/game_detail.php?id=21347&name=amaury
 
     //Para Apiary
-    @GET("games/games_list")
+   /* @GET("games/games_list")
     fun getGamesApiary(): Call<List<GameDto>>
 
     //games/game_detail/21357
@@ -35,9 +35,28 @@ interface GamesApi {
     fun getGameDetailApiary(
         @Path("id") id: String?/*,
         @Path("name") name: String?*/
-    ): Call<GameDetailDto>
+    ): Call<GameDetailDto>*/
 
     //getGameDetailApiary("21357","Amaury")
     //games/game_detail/21347/Amaury
+//------------------PR2-------------------------------
+
+    @GET("xmen/xmen_list")
+    fun getGamesApiary(): Call<List<GameDto>>
+
+    //games/game_detail/21357
+    @GET("xmen/xmen_detail/{id}")
+    fun getGameDetailApiary(
+        @Path("id") id: String?/*,
+        @Path("name") name: String?*/
+    ): Call<GameDetailDto>
+
+    //La liga del profe
+    //https://private-a649a-games28.apiary-mock.com/games/games_list
+    //Mi liga
+    //https://private-3dc8e0-xmen.apiary-mock.com/xmen/xmen_list
+    //GEThttps://private-3dc8e0-xmen.apiary-mock.com/xmen/xmen_detail/21357
+
+    //https://private-9e12b0-xmen3.apiary-mock.com/xmen/xmen_list
 
 }
