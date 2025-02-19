@@ -18,6 +18,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 
+//App xmen-checando
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
