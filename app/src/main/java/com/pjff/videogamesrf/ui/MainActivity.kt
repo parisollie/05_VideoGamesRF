@@ -18,7 +18,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 
-//App xmen-checando
+//App xmen-checando, trabajremos con este
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
