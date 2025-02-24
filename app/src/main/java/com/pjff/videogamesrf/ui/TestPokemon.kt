@@ -21,30 +21,36 @@ import retrofit2.converter.gson.GsonConverterFactory
     }
 }*/
 
+//Paso 2.3
 class TestPokemon : AppCompatActivity() {
 
+    //paso 2.4
     private lateinit var binding: ActivityTestPokemonBinding
 
-    //MI URL BSE
+    //Paso 2.6,MI URL BASE
     private val BASE_URL = "https://pokeapi.co/"
 
     private val LOGTAG = "LOGS"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //Paso 2.5
         binding = ActivityTestPokemonBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //paso 2.6
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        //La instanciaos con el retofrit
+        //Paso 2.7,La instanciaos con el retofrit
         val pokemonApi: PokemonApi = retrofit.create(PokemonApi::class.java)
 
-        val call: Call<PokemonDetailDto> = pokemonApi.getPokemonDetail("200")
+        //Paso 2.8
+        val call: Call<PokemonDetailDto> = pokemonApi.getPokemonDetail("151")
 
+        //Paso 2.9
         call.enqueue(object: Callback<PokemonDetailDto> {
             override fun onResponse(
                 call: Call<PokemonDetailDto>,
@@ -56,11 +62,8 @@ class TestPokemon : AppCompatActivity() {
                     .load(response.body()?.sprites?.other?.officialArtwork?.frontDefault)
                     .into(binding.ivPokemon)
             }
-
             override fun onFailure(call: Call<PokemonDetailDto>, t: Throwable) {
-
             }
-
         })
     }
 }
