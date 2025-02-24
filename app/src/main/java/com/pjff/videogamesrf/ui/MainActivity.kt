@@ -21,13 +21,17 @@ import retrofit2.Retrofit
 //App xmen-checando, trabajremos con este
 class MainActivity : AppCompatActivity() {
 
+    //Paso 1.1
     private lateinit var binding: ActivityMainBinding
-    /*private lateinit var repository: GameRepository
+    /*
+    //Paso 1.13
+    private lateinit var repository: GameRepository
     private lateinit var retrofit: Retrofit*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.SplashTheme)
         super.onCreate(savedInstanceState)
+        //Paso 1.2
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -37,16 +41,20 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         }
 
-        //Instanciamos el retrofithelper
+        //Paso 1.14,Instanciamos el Retrofithelper
         //retrofit = RetrofitHelper().getRetrofit()
+        //paso 1.15
         //repository = GameRepository(retrofit)
 
-        //Mandamos una ecorutina
+        //Paso 1.16,Mandamos una Corrutina
        /*lifecycleScope.launch {
+           //Para el listado de juegos y le mandamos el párametro
            val call: Call<List<GameDto>> = repository.getGames("cm/games/games_list.php")
 
-           //La metemos ala cola para llamarla
+           //Paso 1.17,La metemos a la cola para llamarla y le pasamos una interfaz como un object
            call.enqueue(object: Callback<List<GameDto>> {
+               //Le ponemos los 2 miembros: onResponse y OnFailure
+
                override fun onResponse(
                    call: Call<List<GameDto>>,
                    response: Response<List<GameDto>>

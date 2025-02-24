@@ -8,7 +8,7 @@
     android:padding="4dp"
     >
 
-
+    <!--Paso 1.23-->
     <View
         android:id="@+id/viewBackground"
         android:layout_width="match_parent"

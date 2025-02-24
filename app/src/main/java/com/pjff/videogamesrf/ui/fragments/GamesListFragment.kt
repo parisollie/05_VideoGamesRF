@@ -23,6 +23,7 @@ import retrofit2.Response
 
 class GamesListFragment : Fragment() {
 
+    //paso 1.32
     private var _binding: FragmentGamesListBinding? = null
     private val binding get() = _binding!!
 
@@ -37,7 +38,7 @@ class GamesListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        //Paso1.33, Inflate the layout for this fragment
         _binding = FragmentGamesListBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -92,6 +93,7 @@ class GamesListFragment : Fragment() {
 
     }
 
+    //Paso 1.34
     override fun onDestroy() {
         super.onDestroy()
         _binding = null

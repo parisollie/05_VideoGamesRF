@@ -3,25 +3,20 @@ package com.pjff.videogamesrf.data.remote.model
 import com.google.gson.annotations.SerializedName
 
 data class GameDetailDto(
+    /*
+    Paso 1.6, aqui sacaremos la respuesta pero mas profunda de cada personaje
+    https://private-3dc8e0-xmen.apiary-mock.com/xmen/xmen_detail/21357
 
-    /*Y aqui es cuando nos concentramos en al que le haremos click
+     Esto es lo que debemos extraer de la api:
 
-    {
-    "title": "Zelda: Breath of the wild",
-    "image": "https://www.serverbpw.com/cm/games/imgs/zelda_botw.png",
-    "long_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat metus
-     in diam sceleorttitor malesuada consequat. Mauris arcu velit, aliquam in justo vel"
-     }
-    */
-    /*  @SerializedName("title")
-      var title: String? = null,
-      @SerializedName("image")
-      var image: String? = null,
-      @SerializedName("long_desc")
-      var longDesc: String? = null
-  )*/
+    "name":"Jean Gray",
+    "Level":"Omega",
+    "First Time":"Uncanny X-Men # 1 (1963)",
+    "Power":"La fuerza del fÃ©nix",
+    "image": "https://static.wikia.nocookie.net/marveldatabase/images/4/4d/A.X.E._Judgment_Day_Vol_1_3_Women_of_A.X.E._Variant_Textless.jpg/revision/latest?cb=20220711112817",
+    "long_desc": "Es una mutante nivel Omega que posee grandes poderes telepÃ¡ticos, telequineticos, pyroquinesis y manipulaciÃ³n molecular entre otros. TambiÃ©n es la reencarnaciÃ³n fÃ­sica de la Fuerza FÃ©nix, una poderosa entidad cÃ³smica que le dio vida a los universos y que en tiempos atrÃ¡s destruyÃ³ planetas. Dicha entidad representa la creaciÃ³n, destrucciÃ³n y resurrecciÃ³n."
 
-//---------------------------------PR2------------------------------
+     */
 
     @SerializedName("name")
     var name: String? = null,
@@ -37,14 +32,3 @@ data class GameDetailDto(
     var power: String? = null
 )
 
-/*
-{
-    "name":"Jean Gray",
-    "Level":"Omega",
-    "First Time":"Uncanny X-Men # 1 (1963)",
-    "Power":"La fuerza del fÃ©nix",
-    "image": "https://static.wikia.nocookie.net/marveldatabase/images/4/4d/A.X.E._Judgment_Day_Vol_1_3_Women_of_A.X.E._Variant_Textless.jpg/revision/latest?cb=20220711112817",
-    "long_desc": "Es una mutante nivel Omega que posee grandes poderes telepÃ¡ticos, telequineticos, pyroquinesis y manipulaciÃ³n molecular entre otros. TambiÃ©n es la reencarnaciÃ³n fÃ­sica de la Fuerza FÃ©nix, una poderosa entidad cÃ³smica que le dio vida a los universos y que en tiempos atrÃ¡s destruyÃ³ planetas. Dicha entidad representa la creaciÃ³n, destrucciÃ³n y resurrecciÃ³n."
-
-}
-* */

@@ -3,6 +3,7 @@
     <style name="Base.Theme.VideoGamesRF" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!--Paso 1,empezamos en temas-->
         <item name="colorPrimary">#C8B617</item>
     </style>
 

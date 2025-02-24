@@ -6,6 +6,7 @@
     android:background="#141A31"
     tools:context=".ui.fragments.GamesListFragment">
 
+    <!--Paso 1.21-->
     <ProgressBar
         android:id="@+id/pbLoading"
         android:layout_width="50dp"

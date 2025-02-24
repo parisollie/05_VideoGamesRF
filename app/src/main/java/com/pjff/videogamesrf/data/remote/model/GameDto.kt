@@ -2,25 +2,18 @@ package com.pjff.videogamesrf.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 
-//Para poder consumir nuestra respuesta
+//Paso 1.5,Para poder consumir nuestra respuesta
+
 /*
-Para esto es cuando tenemos la lista
+    Mi liGa de mi api:  https://private-3dc8e0-xmen.apiary-mock.com/xmen/xmen_list
+    Deben ser identicas a la API,porque sino no funciona.
 
-"id": "5036954",
- "thumbnail": "https://www.serverbpw.com/cm/games/imgs/zeldasst.png",
- "title": "Zelda: Skyward Sword"
+    Estos datos son los que sacaremos de la api :
+
+    "id": "21357",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_UcND_8CGXUE0skiE2V73HhmaXOdKw-us3A&usqp=CAU",
+    "name": "Jean Gray"
 */
-/*data class GameDto(
-    @SerializedName("id")
-    var id: String? = null,
-    @SerializedName("thumbnail")
-    var thumbnail: String? = null,
-    @SerializedName("title")
-    var title: String? = null
-)*/
-
-//---------------- PR2 -------------------
-
 data class GameDto(
     @SerializedName("id")
     var id: String? = null,
@@ -30,11 +23,4 @@ data class GameDto(
     var name: String? = null
 )
 
-/*
 
- "id": "21357",
-
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_UcND_8CGXUE0skiE2V73HhmaXOdKw-us3A&usqp=CAU",
-
-    "name": "Jean Gray"
-*/

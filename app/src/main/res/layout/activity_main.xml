@@ -7,7 +7,7 @@
     tools:context=".ui.MainActivity"
 
     >
-
+<!--Paso 1.21-->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
