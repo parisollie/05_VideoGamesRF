@@ -35,9 +35,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Paso 1.42, ver si viene en nulo.
         if(savedInstanceState == null){
             supportFragmentManager.beginTransaction()
+                //Le ponemos los fragments
                 .replace(R.id.fragment_container, GamesListFragment())
+                //Para que se apliquen los cambios.
                 .commit()
         }
 

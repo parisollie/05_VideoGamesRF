@@ -20,42 +20,50 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+//Paso 1.45
 private const val GAME_ID = "game_id"
 
 
 class GameDetailFragment : Fragment() {
 
+    //Paso 1.46
     private var gameId: String? = null
 
+    //Paso 1.48
     private var _binding: FragmentGameDetailBinding? = null
     private val binding get() = _binding!!
 
+    //Paso 1.51
     private lateinit var repository: GameRepository
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let { args ->
+            //Paso 1.47
             gameId = args.getString(GAME_ID)
-
             Log.d(Constants.LOGTAG, "Id recibido: $gameId")
 
+            //Paso 1.53, para que me pase la instancia del repositorio
             repository = (requireActivity().application as VideoGamesRFApp).repository
 
+            //Paso 1.54,ponemos la corrutina.
             lifecycleScope.launch {
 
                 gameId?.let { id ->
                     //val call: Call<GameDetailDto> = repository.getGameDetail(id)
+                    //paso 1.55
                     val call: Call<GameDetailDto> = repository.getGameDetailApiary(id)
 
+                    //Paso 1.56
                     call.enqueue(object: Callback<GameDetailDto>{
                         override fun onResponse(
                             call: Call<GameDetailDto>,
                             response: Response<GameDetailDto>
                         ) {
-
-
                             binding.apply {
+                                //paso 1.58
+
                                 pbLoading.visibility = View.GONE
 
                                 tvTitle.text = response.body()?.name
@@ -72,20 +80,16 @@ class GameDetailFragment : Fragment() {
                                     .load(response.body()?.image)
                                     .into(ivImage)
                             }
-
                         }
 
                         override fun onFailure(call: Call<GameDetailDto>, t: Throwable) {
+                            //Paso 1.57
                             binding.pbLoading.visibility = View.GONE
-
                             Toast.makeText(requireActivity(), "No hay conexión", Toast.LENGTH_SHORT).show()
                         }
-
                     })
                 }
-
             }
-
         }
     }
 
@@ -93,12 +97,15 @@ class GameDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //Paso 1.49,inflamos la vista
         _binding = FragmentGameDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
 
+    //Paso 1.50
     override fun onDestroy() {
         super.onDestroy()
+        //para evitar fugas de memoria.
         _binding = null
     }
 

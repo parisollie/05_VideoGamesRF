@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
+        <!--Paso 1.43, para que rote-->
         <rotate android:drawable="@drawable/xmenl"
             android:fromDegrees="0"
             android:toDegrees="360"/>
