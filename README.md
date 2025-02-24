@@ -18,3 +18,7 @@ This application contains the following knowledge:
 
 
 ![02](https://github.com/user-attachments/assets/6a58dcea-b06c-44b6-96d1-18f4dff4b939)
+
+##Pokeapi
+
+![PokeApi](https://github.com/user-attachments/assets/80042021-6d83-49b4-8243-88542a7b9689)
